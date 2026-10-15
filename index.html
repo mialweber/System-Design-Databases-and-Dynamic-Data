@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pokémon Weather Finder</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+      crossorigin=""
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="topbar">
+        <div>
+          <h1>Pokémon Weather Finder</h1>
+        </div>
+      </header>
+
+      <main class="content-grid">
+        <section class="panel map-panel">
+          <div class="panel-header">
+            <h2 id="locationTitle">Select a location</h2>
+          </div>
+          <div id="map" aria-label="Map selector"></div>
+        </section>
+
+        <aside class="panel pokemon-card">
+          <div class="panel-header">
+            <h2>Matched Pokémon</h2>
+          </div>
+
+          <div class="pokemon-duo">
+            <div class="pokemon-mini-card">
+              <img
+                id="timePokemonSprite"
+                hidden
+                alt="Pokémon matching time of day"
+              />
+              <div>
+                <p class="mini-label">Time of day</p>
+                <h3 id="timePokemonName">Waiting...</h3>
+                <p id="timePokemonState">Choose a location.</p>
+              </div>
+            </div>
+
+            <div class="pokemon-mini-card">
+              <img
+                id="weatherPokemonSprite"
+                hidden
+                alt="Pokémon matching weather"
+              />
+              <div>
+                <p class="mini-label">Weather</p>
+                <h3 id="weatherPokemonName">Waiting...</h3>
+                <p id="weatherPokemonState">Choose a location.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- time/weather badges removed -->
+
+          <div
+            id="statusMessage"
+            class="status-message"
+            aria-live="polite"
+          ></div>
+        </aside>
+      </main>
+
+      <section class="results-grid">
+        <article class="panel result-card">
+          <div class="panel-header">
+            <h2>Forecast Details:</h2>
+          </div>
+
+          <dl class="stats-list">
+            <div>
+              <dt>Coordinates:</dt>
+              <dd id="coordsDisplay">--</dd>
+            </div>
+            <div>
+              <dt>Time of day:</dt>
+              <dd id="timeOfDayDisplay">--</dd>
+            </div>
+            <div>
+              <dt>Weather:</dt>
+              <dd id="weatherDisplay">--</dd>
+            </div>
+            <div>
+              <dt>Temperature:</dt>
+              <dd id="temperatureDisplay">--</dd>
+            </div>
+          </dl>
+        </article>
+      </section>
+    </div>
+
+    <script
+      src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+      integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+      crossorigin=""
+    ></script>
+    <script src="script.js"></script>
+  </body>
+</html>
